@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAME LIFE - File Upload</title>
+
+    <script src="/jquery.com/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="loader.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="container" id="cont">  
+        <form id="contact" action="uploader.php" method="post" enctype="multipart/form-data">
+            <div class="form-header">
+                <!-- <a href="https://wa.link/xqqjsk"> -->
+                  <h3>GAME LIFE</h3>
+                <!-- </a> -->
+                <h4>Upload your files here!</h4>
+            </div>
+
+            <div class="alert" id="alertBox" style="display: none;"></div>
+
+            <fieldset>
+                <input placeholder="Your name or phone no." name="nm" id="nm" type="text" required autofocus>
+            </fieldset>
+
+            <fieldset class="file-upload-container">
+                <div class="drop-zone" id="dropZone">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <p>Drag & drop your files here or click to browse</p>
+                    <input type="file" name="inpt[]" id="inpt" multiple>
+                </div>
+                <div id="filePreview" class="file-preview" style="display: none;">
+                    <!-- File previews will be dynamically inserted here -->
+                </div>
+                <div class="file-info">
+                    <small>Maximum file size: 4MB each</small>
+                    <small>Allowed file types: Images, Documents, Excel files</small>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <textarea placeholder="Type your message here...." name="txt" id="txt" required></textarea>
+            </fieldset>
+
+            <fieldset>
+                <button name="submit" type="submit" id="submit">
+                    <span class="button-text">Submit</span>
+                    <span class="loading-spinner" style="display: none;">
+                        <i class="fas fa-spinner fa-spin"></i>
+                    </span>
+                </button>
+            </fieldset>
+
+            <div class="instructions">
+                <h5>Instructions:</h5>
+                <ol>
+                    <li>Fill in your name or phone number</li>
+                    <li>Upload your files (max 4MB each, multiple allowed)</li>
+                    <li>Add any specific printing instructions in the message</li>
+                    <li>Submit and wait for confirmation</li>
+                </ol>
+            </div>
+
+            <fieldset>
+                <a href="ufiles/admin.php" target="_blank" class="admin-link">View Uploaded Files</a>
+            </fieldset>
+
+            <p class="copyright">2024 © <a href="https://wa.link/r1q8sj" target="_blank">gimsinc</a></p>
+        </form>
+    </div>
+
+   
+    <script src="loader.js"></script>
+</body>
+</html>
