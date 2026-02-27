@@ -1,10 +1,11 @@
 <?php
 // Define the upload directory, this should be consistent with uploader.php
-$uploadDirectory = "C:\Users\Public";
+$uploadDirectory = "E:\\UPLOADS_DO_NOT_DELETE\\Uploads\\";
 
 // Get filename and prevent directory traversal attacks
 $prieveFile = basename($_GET['filename']);
-$filePath = $uploadDirectory . '\\Uploads' . $prieveFile;
+// 
+$filePath = $uploadDirectory . $prieveFile;
 
 //echo $filePath;//debug
 
@@ -13,6 +14,9 @@ if (!file_exists($filePath)) {
     http_response_code(404);
     die('File not found.');
 }
+
+// Check if forced download is requested
+$forceDownload = isset($_GET['download']) && $_GET['download'] == '1';
 
 // Use pathinfo to get file extension, this is safer and avoids the reference error
 $fileExt = strtolower(pathinfo($prieveFile, PATHINFO_EXTENSION));

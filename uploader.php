@@ -10,7 +10,7 @@ $currentDirectory = getcwd();
 
 //echo $currentDirectory; //debug E:\untitled\L@
 
-$uploadDirectory = "C:\Users\Public\Uploads";
+$uploadDirectory = "E:\\UPLOADS_DO_NOT_DELETE\\Uploads\\";
 
 //E:\untitled\L@
 
